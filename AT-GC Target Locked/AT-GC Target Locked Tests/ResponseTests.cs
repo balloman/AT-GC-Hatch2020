@@ -30,7 +30,7 @@ namespace AT_GC_Target_Locked_Tests
                                                               "         \"text\": \"striatal degeneration\",\n  " +
                                                               "        \"locations\": [\n            {\n           " +
                                                               "   \"offset\": 19,\n              \"length\": 21\n      " +
-                                                              "      }\n          ]\n        }").Infons["Type"]);
+                                                              "      }\n          ]\n        }").Infons["type"]);
         }
     }
 }

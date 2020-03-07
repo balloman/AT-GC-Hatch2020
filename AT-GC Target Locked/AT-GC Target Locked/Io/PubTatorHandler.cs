@@ -4,7 +4,6 @@ using System;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using AT_GC_Target_Locked.Models;
-using AT_GC_Target_Locked.Models.Interfaces;
 using AT_GC_Target_Locked.Models.PubTator;
 
 namespace AT_GC_Target_Locked.Io
