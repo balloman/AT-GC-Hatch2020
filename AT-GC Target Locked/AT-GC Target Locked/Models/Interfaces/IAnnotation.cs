@@ -9,10 +9,10 @@ namespace AT_GC_Target_Locked.Models.Interfaces
      */
     public interface IAnnotation
     {
-        public string Id { get; protected set; }
-        public Dictionary<string, string> Infons { get; protected set; }
-        public string Text { get; protected set; }
-        public List<Location> Locations { get; protected set; }
+        public string Id { get; set; }
+        public Dictionary<string, string> Infons { get; set; }
+        public string Text { get; set; }
+        public List<Location> Locations { get; set; }
         public IAnnotation ParseString(string json);
     }
 

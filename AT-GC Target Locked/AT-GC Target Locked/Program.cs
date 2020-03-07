@@ -2,6 +2,7 @@
 
 using System;
 using AT_GC_Target_Locked.Io;
+using AT_GC_Target_Locked.Models;
 
 namespace AT_GC_Target_Locked
 {
@@ -9,8 +10,7 @@ namespace AT_GC_Target_Locked
     {
         static void Main(string[] args)
         {
-            var handler = PubTatorHandler.GetInstance();
-            var myInterface = handler.GetArticleByPmId("20085714");
+            Annotation.SomeFunction();
         }
     }
 }
