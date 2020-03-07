@@ -1,9 +1,9 @@
-﻿//Created by Bernard Allotey at 12:48 PM Satruday
+﻿//Created by Bernard Allotey at 12:48 PM Saturday
 
 using System;
 using System.Net.Http;
 using System.Net.Http.Headers;
-using AT_GC_Target_Locked.Models;
+using AT_GC_Target_Locked.Models.Interfaces;
 
 namespace AT_GC_Target_Locked.Io
 {
@@ -30,7 +30,7 @@ namespace AT_GC_Target_Locked.Io
         /**
          * Use this to grab the PubTatorHandler Instance
          */
-        public PubTatorHandler GetInstance()
+        public static PubTatorHandler GetInstance()
         {
             return INSTANCE;
         }

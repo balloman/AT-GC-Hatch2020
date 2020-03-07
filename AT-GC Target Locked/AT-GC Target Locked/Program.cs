@@ -1,6 +1,7 @@
 ﻿//Created by Bernard Allotey at 11:40 AM Saturday
 
 using System;
+using AT_GC_Target_Locked.Io;
 
 namespace AT_GC_Target_Locked
 {
@@ -8,7 +9,8 @@ namespace AT_GC_Target_Locked
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var handler = PubTatorHandler.GetInstance();
+            handler.GetArticleByPmId("20085714");
         }
     }
 }
