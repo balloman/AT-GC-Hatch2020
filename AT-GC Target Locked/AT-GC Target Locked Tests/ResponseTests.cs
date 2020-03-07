@@ -67,7 +67,7 @@ namespace AT_GC_Target_Locked_Tests
         {
             var text = System.IO.File.ReadAllText("testResponse.json");
             var response = PubTatorResponse.ParseString(text);
-            Assert.IsTrue(response.Tags.Any(tag => tag.data == "8622"));
+            Assert.IsTrue(response.Tags.Any(tag => tag.data == "8622" && tag.tag == Tag.Gene));
         }
     }
 }
