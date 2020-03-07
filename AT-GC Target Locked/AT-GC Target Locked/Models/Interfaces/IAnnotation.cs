@@ -13,7 +13,7 @@ namespace AT_GC_Target_Locked.Models.Interfaces
         public Dictionary<string, string> Infons { get; protected set; }
         public string Text { get; protected set; }
         public List<Location> Locations { get; protected set; }
-        public IAnnotation ParseString();
+        public IAnnotation ParseString(string json);
     }
 
     public struct Location
