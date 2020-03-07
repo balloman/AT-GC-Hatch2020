@@ -24,7 +24,7 @@ namespace AT_GC_Target_Locked_Tests
         [TestMethod]
         public void EnsureCorrectParseLogic()
         {
-            Assert.AreEqual("Disease", new Annotation().ParseString("{\n          \"id\": \"2\",\n          \"infons\": " +
+            Assert.AreEqual("Disease", Annotation.ParseString("{\n          \"id\": \"2\",\n          \"infons\": " +
                                                               "{\n            \"identifier\": \"MESH:C537500\",\n" +
                                                               "            \"type\": \"Disease\"\n          },\n " +
                                                               "         \"text\": \"striatal degeneration\",\n  " +
