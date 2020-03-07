@@ -9,8 +9,16 @@
         <e p="AT-GC Target Locked.csproj" t="IncludeRecursive" />
         <e p="bin" t="ExcludeRecursive" />
         <e p="HATCH_Articles_Example.txt" t="Include" />
+        <e p="Io" t="Include">
+          <e p="PubTatorHandler.cs" t="Include" />
+        </e>
         <e p="local.json" t="Include" />
         <e p="local.sqlite" t="Include" />
+        <e p="Models" t="Include">
+          <e p="Interfaces" t="Include">
+            <e p="IArticleResponse.cs" t="Include" />
+          </e>
+        </e>
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
             <e p="netcoreapp3.1" t="Include">
