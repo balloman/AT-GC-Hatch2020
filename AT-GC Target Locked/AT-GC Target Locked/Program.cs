@@ -10,7 +10,7 @@ namespace AT_GC_Target_Locked
         static void Main(string[] args)
         {
             var handler = PubTatorHandler.GetInstance();
-            handler.GetArticleByPmId("20085714");
+            var myInterface = handler.GetArticleByPmId("20085714");
         }
     }
 }

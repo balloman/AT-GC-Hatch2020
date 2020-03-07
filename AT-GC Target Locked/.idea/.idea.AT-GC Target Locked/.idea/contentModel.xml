@@ -19,9 +19,7 @@
             <e p="IAnnotation.cs" t="Include" />
             <e p="IArticleResponse.cs" t="Include" />
           </e>
-          <e p="PubTator" t="Include">
-            <e p="Infon.cs" t="Include" />
-          </e>
+          <e p="PubTator" t="Include" />
           <e p="Tag.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive">

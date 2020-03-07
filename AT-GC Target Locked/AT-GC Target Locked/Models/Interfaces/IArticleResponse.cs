@@ -11,6 +11,7 @@ namespace AT_GC_Target_Locked.Models.Interfaces
     {
         public List<Tag> Tags { get; protected set; }
         public string Abstract { get; protected set; }
-        
+        public List<IAnnotation> Annotations { get; protected set; }
     }
+
 }

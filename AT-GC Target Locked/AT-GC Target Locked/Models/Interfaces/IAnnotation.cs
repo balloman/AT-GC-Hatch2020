@@ -1,7 +1,6 @@
 ﻿//Created by Bernard at 1:42 PM Saturday
 
 using System.Collections.Generic;
-using AT_GC_Target_Locked.Models.PubTator;
 
 namespace AT_GC_Target_Locked.Models.Interfaces
 {
@@ -11,7 +10,7 @@ namespace AT_GC_Target_Locked.Models.Interfaces
     public interface IAnnotation
     {
         public string Id { get; protected set; }
-        public Infon Infons { get; protected set; }
+        public Dictionary<string, string> Infons { get; protected set; }
         public string Text { get; protected set; }
         public List<Location> Locations { get; protected set; }
     }
