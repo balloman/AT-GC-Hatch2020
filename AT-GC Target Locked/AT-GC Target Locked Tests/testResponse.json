@@ -1,0 +1,473 @@
+﻿{
+  "_id": "20085714|None",
+  "id": "20085714",
+  "infons": {
+
+  },
+  "passages": [
+    {
+      "infons": {
+        "journal": "Am. J. Hum. Genet.; 2010 Jan; 86(1) 83-7. doi:10.1016/j.ajhg.2009.12.003",
+        "year": "2010",
+        "article-id_pmc": "PMC2801755",
+        "type": "title",
+        "authors": "Appenzeller S, Schirmacher A, Halfter H, B\u00e4umer S, Pendziwiat M, Timmerman V, De Jonghe P, Fekete K, St\u00f6gbauer F, L\u00fcdemann P, Hund M, Quabius ES, Ringelstein EB, Kuhlenb\u00e4umer G",
+        "section": "Title"
+      },
+      "offset": 0,
+      "text": "Autosomal-dominant striatal degeneration is caused by a mutation in the phosphodiesterase 8B gene.",
+      "sentences": [
+
+      ],
+      "annotations": [
+        {
+          "id": "2",
+          "infons": {
+            "identifier": "MESH:C537500",
+            "type": "Disease"
+          },
+          "text": "striatal degeneration",
+          "locations": [
+            {
+              "offset": 19,
+              "length": 21
+            }
+          ]
+        },
+        {
+          "id": "3",
+          "infons": {
+            "identifier": "8622",
+            "type": "Gene",
+            "ncbi_homologene": "2758"
+          },
+          "text": "phosphodiesterase 8B",
+          "locations": [
+            {
+              "offset": 72,
+              "length": 20
+            }
+          ]
+        }
+      ],
+      "relations": [
+
+      ]
+    },
+    {
+      "infons": {
+        "type": "abstract",
+        "section": "Abstract"
+      },
+      "offset": 99,
+      "text": "Autosomal-dominant striatal degeneration (ADSD) is an autosomal-dominant movement disorder affecting the striatal part of the basal ganglia. ADSD is characterized by bradykinesia, dysarthria, and muscle rigidity. These symptoms resemble idiopathic Parkinson disease, but tremor is not present. Using genetic linkage analysis, we have mapped the causative genetic defect to a 3.25 megabase candidate region on chromosome 5q13.3-q14.1. A maximum LOD score of 4.1 (Theta = 0) was obtained at marker D5S1962. Here we show that ADSD is caused by a complex frameshift mutation (c.94G&gt;C+c.95delT) in the phosphodiesterase 8B (PDE8B) gene, which results in a loss of enzymatic phosphodiesterase activity. We found that PDE8B is highly expressed in the brain, especially in the putamen, which is affected by ADSD. PDE8B degrades cyclic AMP, a second messenger implied in dopamine signaling. Dopamine is one of the main neurotransmitters involved in movement control and is deficient in Parkinson disease. We believe that the functional analysis of PDE8B will help to further elucidate the pathomechanism of ADSD as well as contribute to a better understanding of movement disorders.",
+      "sentences": [
+
+      ],
+      "annotations": [
+        {
+          "id": "29",
+          "infons": {
+            "identifier": "MESH:C537500",
+            "type": "Disease"
+          },
+          "text": "striatal degeneration",
+          "locations": [
+            {
+              "offset": 118,
+              "length": 21
+            }
+          ]
+        },
+        {
+          "id": "30",
+          "infons": {
+            "identifier": "MESH:C563783",
+            "type": "Disease"
+          },
+          "text": "ADSD",
+          "locations": [
+            {
+              "offset": 141,
+              "length": 4
+            }
+          ]
+        },
+        {
+          "id": "31",
+          "infons": {
+            "identifier": "MESH:D015835",
+            "type": "Disease"
+          },
+          "text": "autosomal-dominant movement disorder",
+          "locations": [
+            {
+              "offset": 153,
+              "length": 36
+            }
+          ]
+        },
+        {
+          "id": "32",
+          "infons": {
+            "identifier": "MESH:C563783",
+            "type": "Disease"
+          },
+          "text": "ADSD",
+          "locations": [
+            {
+              "offset": 240,
+              "length": 4
+            }
+          ]
+        },
+        {
+          "id": "33",
+          "infons": {
+            "identifier": "MESH:D018476",
+            "type": "Disease"
+          },
+          "text": "bradykinesia",
+          "locations": [
+            {
+              "offset": 265,
+              "length": 12
+            }
+          ]
+        },
+        {
+          "id": "34",
+          "infons": {
+            "identifier": "MESH:D004401",
+            "type": "Disease"
+          },
+          "text": "dysarthria",
+          "locations": [
+            {
+              "offset": 279,
+              "length": 10
+            }
+          ]
+        },
+        {
+          "id": "35",
+          "infons": {
+            "identifier": "MESH:D009127",
+            "type": "Disease"
+          },
+          "text": "muscle rigidity",
+          "locations": [
+            {
+              "offset": 295,
+              "length": 15
+            }
+          ]
+        },
+        {
+          "id": "36",
+          "infons": {
+            "identifier": "MESH:D010300",
+            "type": "Disease"
+          },
+          "text": "idiopathic Parkinson disease",
+          "locations": [
+            {
+              "offset": 336,
+              "length": 28
+            }
+          ]
+        },
+        {
+          "id": "37",
+          "infons": {
+            "identifier": "MESH:D014202",
+            "type": "Disease"
+          },
+          "text": "tremor",
+          "locations": [
+            {
+              "offset": 370,
+              "length": 6
+            }
+          ]
+        },
+        {
+          "id": "38",
+          "infons": {
+            "identifier": "MESH:D030342",
+            "type": "Disease"
+          },
+          "text": "genetic defect",
+          "locations": [
+            {
+              "offset": 454,
+              "length": 14
+            }
+          ]
+        },
+        {
+          "id": "39",
+          "infons": {
+            "identifier": "MESH:C563783",
+            "type": "Disease"
+          },
+          "text": "ADSD",
+          "locations": [
+            {
+              "offset": 622,
+              "length": 4
+            }
+          ]
+        },
+        {
+          "id": "40",
+          "infons": {
+            "identifier": "c.95delT",
+            "type": "Mutation",
+            "subtype": "DNAMutation"
+          },
+          "text": "c.95delT",
+          "locations": [
+            {
+              "offset": 682,
+              "length": 8
+            }
+          ]
+        },
+        {
+          "id": "41",
+          "infons": {
+            "identifier": "8622",
+            "type": "Gene",
+            "ncbi_homologene": "2758"
+          },
+          "text": "phosphodiesterase 8B",
+          "locations": [
+            {
+              "offset": 699,
+              "length": 20
+            }
+          ]
+        },
+        {
+          "id": "42",
+          "infons": {
+            "identifier": "8622",
+            "type": "Gene",
+            "ncbi_homologene": "2758"
+          },
+          "text": "PDE8B",
+          "locations": [
+            {
+              "offset": 721,
+              "length": 5
+            }
+          ]
+        },
+        {
+          "id": "43",
+          "infons": {
+            "identifier": "8622",
+            "type": "Gene",
+            "ncbi_homologene": "2758"
+          },
+          "text": "PDE8B",
+          "locations": [
+            {
+              "offset": 813,
+              "length": 5
+            }
+          ]
+        },
+        {
+          "id": "44",
+          "infons": {
+            "identifier": "MESH:C563783",
+            "type": "Disease"
+          },
+          "text": "ADSD",
+          "locations": [
+            {
+              "offset": 901,
+              "length": 4
+            }
+          ]
+        },
+        {
+          "id": "45",
+          "infons": {
+            "identifier": "8622",
+            "type": "Gene",
+            "ncbi_homologene": "2758"
+          },
+          "text": "PDE8B",
+          "locations": [
+            {
+              "offset": 907,
+              "length": 5
+            }
+          ]
+        },
+        {
+          "id": "46",
+          "infons": {
+            "identifier": "MESH:D000242",
+            "type": "Chemical"
+          },
+          "text": "cyclic AMP",
+          "locations": [
+            {
+              "offset": 922,
+              "length": 10
+            }
+          ]
+        },
+        {
+          "id": "47",
+          "infons": {
+            "identifier": "MESH:D004298",
+            "type": "Chemical"
+          },
+          "text": "dopamine",
+          "locations": [
+            {
+              "offset": 964,
+              "length": 8
+            }
+          ]
+        },
+        {
+          "id": "48",
+          "infons": {
+            "identifier": "MESH:D004298",
+            "type": "Chemical"
+          },
+          "text": "Dopamine",
+          "locations": [
+            {
+              "offset": 984,
+              "length": 8
+            }
+          ]
+        },
+        {
+          "id": "49",
+          "infons": {
+            "identifier": "MESH:C115050",
+            "type": "Chemical"
+          },
+          "text": "one",
+          "locations": [
+            {
+              "offset": 996,
+              "length": 3
+            }
+          ]
+        },
+        {
+          "id": "50",
+          "infons": {
+            "identifier": "MESH:D010300",
+            "type": "Disease"
+          },
+          "text": "Parkinson disease",
+          "locations": [
+            {
+              "offset": 1079,
+              "length": 17
+            }
+          ]
+        },
+        {
+          "id": "51",
+          "infons": {
+            "identifier": "8622",
+            "type": "Gene",
+            "ncbi_homologene": "2758"
+          },
+          "text": "PDE8B",
+          "locations": [
+            {
+              "offset": 1141,
+              "length": 5
+            }
+          ]
+        },
+        {
+          "id": "52",
+          "infons": {
+            "identifier": "MESH:C563783",
+            "type": "Disease"
+          },
+          "text": "ADSD",
+          "locations": [
+            {
+              "offset": 1200,
+              "length": 4
+            }
+          ]
+        },
+        {
+          "id": "53",
+          "infons": {
+            "identifier": "MESH:D009069",
+            "type": "Disease"
+          },
+          "text": "movement disorders",
+          "locations": [
+            {
+              "offset": 1256,
+              "length": 18
+            }
+          ]
+        }
+      ],
+      "relations": [
+
+      ]
+    }
+  ],
+  "relations": [
+
+  ],
+  "pmid": 20085714,
+  "pmcid": null,
+  "created": {
+    "$date": 1572526582545
+  },
+  "accessions": [
+    "chemical@MESH:C115050",
+    "disease@MESH:D004401",
+    "chemical@MESH:D000242",
+    "disease@MESH:D030342",
+    "mutation@c.95delT",
+    "disease@MESH:C537500",
+    "disease@MESH:D009069",
+    "disease@MESH:D010300",
+    "gene@8622",
+    "disease@MESH:D009127",
+    "disease@MESH:D014202",
+    "disease@MESH:D018476",
+    "chemical@MESH:D004298",
+    "disease@MESH:C563783",
+    "disease@MESH:D015835"
+  ],
+  "journal": "Am. J. Hum. Genet.",
+  "year": 2010,
+  "authors": [
+    "Appenzeller S",
+    "Schirmacher A",
+    "Halfter H",
+    "B\u00e4umer S",
+    "Pendziwiat M",
+    "Timmerman V",
+    "De Jonghe P",
+    "Fekete K",
+    "St\u00f6gbauer F",
+    "L\u00fcdemann P",
+    "Hund M",
+    "Quabius ES",
+    "Ringelstein EB",
+    "Kuhlenb\u00e4umer G"
+  ]
+}
