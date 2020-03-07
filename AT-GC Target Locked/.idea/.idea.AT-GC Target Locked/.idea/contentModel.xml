@@ -8,6 +8,8 @@
       <e p="AT-GC Target Locked" t="IncludeRecursive">
         <e p="AT-GC Target Locked.csproj" t="IncludeRecursive" />
         <e p="bin" t="ExcludeRecursive" />
+        <e p="HATCH_Articles_Example.txt" t="Include" />
+        <e p="local.sqlite" t="Include" />
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
             <e p="netcoreapp3.1" t="Include">
@@ -16,6 +18,7 @@
           </e>
         </e>
         <e p="Program.cs" t="Include" />
+        <e p="Target Locked.pdf" t="Include" />
       </e>
       <e p="AT-GC Target Locked.sln" t="IncludeFlat" />
       <e p="packages" t="ExcludeRecursive" />
