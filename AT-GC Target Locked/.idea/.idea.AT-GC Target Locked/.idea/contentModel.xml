@@ -22,9 +22,6 @@
         <e p="local.sqlite" t="Include" />
         <e p="Models" t="Include">
           <e p="Annotation.cs" t="Include" />
-          <e p="Interfaces" t="Include">
-            <e p="IAnnotation.cs" t="Include" />
-          </e>
           <e p="PubTator" t="Include">
             <e p="PubTatorResponse.cs" t="Include" />
           </e>

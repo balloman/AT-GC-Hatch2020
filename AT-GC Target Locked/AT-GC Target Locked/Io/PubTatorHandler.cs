@@ -5,6 +5,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using AT_GC_Target_Locked.Models;
 using AT_GC_Target_Locked.Models.Interfaces;
+using AT_GC_Target_Locked.Models.PubTator;
 
 namespace AT_GC_Target_Locked.Io
 {
@@ -36,12 +37,12 @@ namespace AT_GC_Target_Locked.Io
             return INSTANCE;
         }
 
-        public IArticleResponse GetArticleByPmId(string id)
+        public PubTatorResponse GetArticleByPmId(string id)
         {
             var response = Client.GetAsync("?pmids=" + id).Result;
             if (response.IsSuccessStatusCode)
             {
-                return annotation.ParseString(response.Content.ReadAsStringAsync().Result);
+                return PubTatorResponse.ParseString(response.Content.ReadAsStringAsync().Result);
             }
             return null;
         }
