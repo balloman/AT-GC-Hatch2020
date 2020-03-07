@@ -1,5 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
+using System.Runtime.CompilerServices;
+using System.Security.Cryptography.X509Certificates;
+using Newtonsoft.Json.Linq;
 
 namespace AT_GC_Target_Locked.Models.PubTator
 {
@@ -9,10 +13,17 @@ namespace AT_GC_Target_Locked.Models.PubTator
         public Dictionary<string, string> Infons { get; set; }
         public List<Passage> Passages { get; set; }
         public DateTime Created { get; set; }
-        public List<Tag> Tags { get; set; }
+        public List<Accessor> Tags { get; set; }
         public string Journal { get; set; }
         public int Year { get; set; }
         public List<string> Authors { get; set; }
+
+        public PubTatorResponse()
+        {
+            Infons = new Dictionary<string, string>();
+            Tags = new List<Accessor>();
+            Authors = new List<string>();
+        }
 
         public class Passage
         {
@@ -23,10 +34,42 @@ namespace AT_GC_Target_Locked.Models.PubTator
             public List<Annotation> Annotations { get; set; }
         }
 
+        [SuppressMessage("ReSharper", "InconsistentNaming")]
+        public struct Accessor
+        {
+            public Tag tag;
+            public String data;
+        }
+
         public static PubTatorResponse ParseString(string json)
         {
+            JObject jsonAnnotation = JObject.Parse(json);
             var response = new PubTatorResponse();
-            //Some Code
+            response.Id = jsonAnnotation.GetValue("Id").ToObject<String>();
+            response.Infons = jsonAnnotation.GetValue("Infons").ToObject<Dictionary<string,string>>();
+            var passagesArray = JArray.Parse(jsonAnnotation["passages"].ToString());
+            foreach (var passage in passagesArray)
+            {
+                var passageObject = new Passage();
+                passageObject.Infons = passage.ToObject<Dictionary<String, String>>();
+                passageObject.Offset = passage.ToObject<int>();
+                passageObject.Text = passage.ToObject<String>();
+                // call annotations
+                
+            }
+            var created = DateTimeOffset.FromUnixTimeMilliseconds(jsonAnnotation.GetValue("$date").ToObject<int>()).DateTime;
+            var tagsArray = JArray.Parse(jsonAnnotation["accessions"].ToString());
+            foreach (var token in tagsArray)
+            {
+                var accessionString = token.ToString();
+                var parts = accessionString.Split("@");
+                Tag myTag;
+                Enum.TryParse(parts[0], out myTag);
+                response.Tags.Add(new Accessor
+                {
+                    tag = myTag, data = parts[1]
+                });
+            }
             return response;
         }
     }
