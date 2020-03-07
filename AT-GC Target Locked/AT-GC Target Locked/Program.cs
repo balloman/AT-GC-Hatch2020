@@ -10,7 +10,6 @@ namespace AT_GC_Target_Locked
     {
         static void Main(string[] args)
         {
-            Annotation.SomeFunction();
         }
     }
 }

@@ -5,7 +5,7 @@ using AT_GC_Target_Locked.Models.Interfaces;
 
 namespace AT_GC_Target_Locked.Models
 {
-    class Annotation: IAnnotation 
+    public class Annotation: IAnnotation 
     {
         public string Id { get; set; }
         public Dictionary<string, string> Infons { get; set; }

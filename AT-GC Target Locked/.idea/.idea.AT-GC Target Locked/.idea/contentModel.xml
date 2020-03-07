@@ -21,6 +21,7 @@
         <e p="local.json" t="Include" />
         <e p="local.sqlite" t="Include" />
         <e p="Models" t="Include">
+          <e p="Annotation.cs" t="Include" />
           <e p="Interfaces" t="Include">
             <e p="IAnnotation.cs" t="Include" />
             <e p="IArticleResponse.cs" t="Include" />
@@ -48,7 +49,7 @@
             </e>
           </e>
         </e>
-        <e p="UnitTest1.cs" t="Include" />
+        <e p="ResponseTests.cs" t="Include" />
       </e>
       <e p="AT-GC Target Locked.sln" t="IncludeFlat" />
       <e p="packages" t="ExcludeRecursive" />
