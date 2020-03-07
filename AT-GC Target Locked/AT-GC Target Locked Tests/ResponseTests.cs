@@ -36,17 +36,38 @@ namespace AT_GC_Target_Locked_Tests
         }
 
         [TestMethod]
-        public void EnsureCorrectWholeResponseLogic()
+        public void GeneralTotalParseTest()
         {
             var text = System.IO.File.ReadAllText("testResponse.json");
             var response = PubTatorResponse.ParseString(text);
             Assert.AreEqual("20085714", response.Id);
-            Assert.IsTrue(response.Authors.Any(s => s.Contains("Halfter")));
             Assert.AreEqual(2010, response.Year);
             Assert.IsTrue(response.Created.Equals(DateTimeOffset.FromUnixTimeMilliseconds(1572526582545)
                 .DateTime));
+        }
+
+        [TestMethod]
+        public void PassageParseTest()
+        {
+            var text = System.IO.File.ReadAllText("testResponse.json");
+            var response = PubTatorResponse.ParseString(text);
             Assert.IsTrue(response.Passages.Any(passage => passage.Offset == 99));
-            Assert.IsTrue(response.Tags.Contains(Tag.Disease));
+        }
+
+        [TestMethod]
+        public void AuthorsParseTest()
+        {
+            var text = System.IO.File.ReadAllText("testResponse.json");
+            var response = PubTatorResponse.ParseString(text);
+            Assert.IsTrue(response.Authors.Any(s => s.Contains("Halfter")));
+        }
+
+        [TestMethod]
+        public void TagParseTest()
+        {
+            var text = System.IO.File.ReadAllText("testResponse.json");
+            var response = PubTatorResponse.ParseString(text);
+            Assert.IsTrue(response.Tags.Any(tag => tag.data == "8622"));
         }
     }
 }
