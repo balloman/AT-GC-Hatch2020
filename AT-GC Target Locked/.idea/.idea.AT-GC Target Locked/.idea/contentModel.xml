@@ -16,6 +16,7 @@
         <e p="bin" t="ExcludeRecursive" />
         <e p="HATCH_Articles_Example.txt" t="Include" />
         <e p="Io" t="Include">
+          <e p="EntrezHandler.cs" t="Include" />
           <e p="PubTatorHandler.cs" t="Include" />
         </e>
         <e p="local.json" t="Include" />
@@ -48,6 +49,7 @@
           </e>
         </e>
         <e p="ResponseTests.cs" t="Include" />
+        <e p="testResponse.json" t="Include" />
       </e>
       <e p="AT-GC Target Locked.sln" t="IncludeFlat" />
       <e p="packages" t="ExcludeRecursive" />
