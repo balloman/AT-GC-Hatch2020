@@ -2,13 +2,15 @@
 @inject Services.SearchData SearchData
 @inject NavigationManager NavigationManager
 
-    <h1>Enter search terms:</h1>
+    <h3>Enter search terms:</h3>
 
 <EditForm Model="@_searchQueryModel" OnValidSubmit="Search">
     <DataAnnotationsValidator />
     <ValidationSummary />
-
-    <InputText id="name" @bind-Value="_searchQueryModel.Query" />
+    <div class="form-group">
+        <InputText class="form-control" id="name" @bind-Value="_searchQueryModel.Query" />
+    </div>
+    
 
     <button class="btn btn-primary" type="submit">Submit</button>
 </EditForm>
