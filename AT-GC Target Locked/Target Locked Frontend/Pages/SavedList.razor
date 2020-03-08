@@ -1,8 +1,13 @@
 ﻿@page "/SavedList"
 @inject Services.SearchData SearchData
 @inject IModalService Modal
+@inject IJSRuntime JsRuntime
 
 <h3>SavedList</h3>
+
+<button type="button" class="btn btn-primary" onclick="ExportClicked">
+    Export Selected
+</button>
 
 <table class="table">
     <thead>

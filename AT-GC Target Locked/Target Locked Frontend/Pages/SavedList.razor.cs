@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 using Blazored.Modal;
 using Target_Locked_Frontend.Services;
+using AT_GC_Target_Locked.Io;
 
 namespace Target_Locked_Frontend.Pages
 {
@@ -43,6 +46,21 @@ namespace Target_Locked_Frontend.Pages
                 Position = "blazored-modal-center"
             };
             Modal.Show<TagsComponent>("Tags", parameters);
+        }
+
+        public async void ExportClicked()
+        {
+            List<String> pubIds = new List<string>();
+            foreach (var check in Checks.Keys.ToList())
+            {
+                if (Checks[check])
+                {
+                    pubIds.Add(check);
+                }
+                Checks[check] = false;
+            }
+            var citations = new CitationHandler().GetCitations(pubIds.ToArray());
+            File.WriteAllLines("citations.txt", citations);
         }
     }
 }
