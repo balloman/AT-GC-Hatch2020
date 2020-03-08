@@ -1,11 +1,14 @@
 ﻿@page "/"
+@inject Services.SearchData SearchData
+@inject NavigationManager NavigationManager
 
+    <h1>Enter search terms:</h1>
 
-<EditForm Model="@_searchModel" OnValidSubmit="IncrementCount">
+<EditForm Model="@_searchQueryModel" OnValidSubmit="Search">
     <DataAnnotationsValidator />
     <ValidationSummary />
 
-    <InputText id="name" @bind-Value="_searchModel.Query" />
+    <InputText id="name" @bind-Value="_searchQueryModel.Query" />
 
-    <button type="submit">Submit</button>
+    <button class="btn btn-primary" type="submit">Submit</button>
 </EditForm>

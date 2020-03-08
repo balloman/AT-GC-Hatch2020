@@ -101,7 +101,14 @@ namespace AT_GC_Target_Locked.Models.PubTator
             var authorsArray = jsonAnnotation.GetValue("authors").ToObject<List<String>>();
             response.Authors = authorsArray;
             response.Journal = jsonAnnotation.GetValue("journal").ToObject<String>();
-            response.Year = jsonAnnotation.GetValue("year").ToObject<int>();
+            try
+            {
+                response.Year = jsonAnnotation.GetValue("year").ToObject<Int32>();
+            }
+            catch (ArgumentException)
+            {
+                response.Year = 0;
+            }
             return response;
         }
 

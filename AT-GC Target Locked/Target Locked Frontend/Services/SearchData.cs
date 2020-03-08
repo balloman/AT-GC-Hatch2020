@@ -7,6 +7,7 @@ namespace Target_Locked_Frontend.Services
 {
     public class SearchData
     {
-        public string[] Query { get; set; }
+        public string Query { get; set; }
+        public string[] Results { get; set; }
     }
 }

@@ -1,19 +1,23 @@
 ﻿@page "/SearchResults"
 @inject Services.SearchData SearchData
 
-<h3>SearchResults</h3>
+<h3>Results:</h3>
 
 <table class="table">
     <thead>
     <tr>
-        <th>PMID</th>
+        <th>PMIDS</th>
+        <th>Title</th>
+        <th>Confidence</th>
     </tr>
     </thead>
     <tbody>
-    @foreach (var forecast in Results)
+    @foreach (var data in GetResponses(Results))
     {
         <tr>
-            <td>@forecast</td>
+            <td>@data.Pmid</td>
+            <td>@data.Title</td>
+            <td>@data.Confidence</td>
         </tr>
     }
     </tbody>
