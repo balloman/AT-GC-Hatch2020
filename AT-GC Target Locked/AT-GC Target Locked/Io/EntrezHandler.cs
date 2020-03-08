@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Runtime.Serialization;
 using System.Web;
 using System.Xml;
 using Newtonsoft.Json;
@@ -17,7 +18,27 @@ namespace AT_GC_Target_Locked.Io
 
         // ReSharper disable once InconsistentNaming
         private static readonly EntrezHandler INSTANCE = new EntrezHandler();
+        
+        public class NoResultsException : Exception
+        {
+            public NoResultsException()
+            {
+            }
 
+            public NoResultsException(string message) : base(message)
+            {
+            }
+
+            public NoResultsException(string message, Exception inner) : base(message, inner)
+            {
+            }
+
+            protected NoResultsException(
+                SerializationInfo info,
+                StreamingContext context) : base(info, context)
+            {
+            }
+        }
         
         private EntrezHandler()
         {
@@ -32,8 +53,11 @@ namespace AT_GC_Target_Locked.Io
             if (count > 500)
             {
                 Console.WriteLine("Query resulted in " + count + " terms. Maybe try a more specific query?");
+            }else if (count == 0)
+            {
+                throw new NoResultsException();
             }
-
+    
             return pubList["eSearchResult"]["IdList"]["Id"].ToObject<string[]>();
         }
 

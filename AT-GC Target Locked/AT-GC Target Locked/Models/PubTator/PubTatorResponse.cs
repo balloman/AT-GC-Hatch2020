@@ -39,7 +39,7 @@ namespace AT_GC_Target_Locked.Models.PubTator
         public struct Accessor
         {
             public Tag tag;
-            public String data;
+            public string data;
         }
 
         public static PubTatorResponse ParseString(string json)
@@ -72,8 +72,11 @@ namespace AT_GC_Target_Locked.Models.PubTator
             {
                 var accessionString = token.ToString();
                 var parts = accessionString.Split("@");
-                Tag myTag;
-                Enum.TryParse(parts[0], out myTag);
+                var works = Enum.TryParse(parts[0], true, out Tag myTag);
+                if (!works)
+                {
+                    Console.WriteLine("Enum Parse Failed for" + parts[0]);
+                }
                 response.Tags.Add(new Accessor
                 {
                     tag = myTag, data = parts[1]

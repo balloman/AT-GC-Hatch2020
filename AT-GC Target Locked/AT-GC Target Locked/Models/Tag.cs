@@ -7,6 +7,7 @@ namespace AT_GC_Target_Locked.Models
         Gene,
         Disease,
         Mutation,
-        Chemical
+        Chemical,
+        Species
     }
 }

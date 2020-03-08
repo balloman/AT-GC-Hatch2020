@@ -14,13 +14,13 @@ namespace AT_GC_Target_Locked.Models
         public List<Location> Locations { get; set; }
         public static Annotation ParseString(string json)
         {
-            Annotation thisAnnotation = new Annotation();
-            JObject jsonAnnotation = JObject.Parse(json);
+            var thisAnnotation = new Annotation();
+            var jsonAnnotation = JObject.Parse(json);
             thisAnnotation.Id = jsonAnnotation.GetValue("id").ToObject<String>();
             thisAnnotation.Infons = jsonAnnotation.GetValue("infons").ToObject<Dictionary<string,string>>();
             var locationsArray = jsonAnnotation.GetValue("locations").ToObject<Location[]>();
-            thisAnnotation.Locations = locationsArray.OfType<Location>().ToList();
-            thisAnnotation.Text = json;
+            thisAnnotation.Locations = locationsArray.ToList();
+            thisAnnotation.Text = jsonAnnotation["text"].ToObject<string>();
             return thisAnnotation;
         }
 
