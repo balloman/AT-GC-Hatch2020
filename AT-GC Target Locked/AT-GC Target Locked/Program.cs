@@ -8,7 +8,7 @@ using AT_GC_Target_Locked.Io;
 namespace AT_GC_Target_Locked
 {
     // ReSharper disable once ClassNeverInstantiated.Global
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
@@ -60,5 +60,7 @@ namespace AT_GC_Target_Locked
             Console.ReadLine();
             Console.Clear();
         }
+
+
     }
 }

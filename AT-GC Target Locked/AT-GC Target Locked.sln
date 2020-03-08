@@ -1,8 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AT-GC Target Locked", "AT-GC Target Locked\AT-GC Target Locked.csproj", "{48CC8278-0ADC-440E-8E2E-23ECF500F60B}"
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29806.167
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AT-GC Target Locked", "AT-GC Target Locked\AT-GC Target Locked.csproj", "{48CC8278-0ADC-440E-8E2E-23ECF500F60B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AT-GC Target Locked Tests", "AT-GC Target Locked Tests\AT-GC Target Locked Tests.csproj", "{7DFD2706-BB21-4754-BFDE-1B0DDE4EA65C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AT-GC Target Locked Tests", "AT-GC Target Locked Tests\AT-GC Target Locked Tests.csproj", "{7DFD2706-BB21-4754-BFDE-1B0DDE4EA65C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Target Locked Frontend", "Target Locked Frontend\Target Locked Frontend.csproj", "{2FA29A23-7733-4FC8-8FFD-AC69F9EDDAC9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,5 +23,15 @@ Global
 		{7DFD2706-BB21-4754-BFDE-1B0DDE4EA65C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7DFD2706-BB21-4754-BFDE-1B0DDE4EA65C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7DFD2706-BB21-4754-BFDE-1B0DDE4EA65C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2FA29A23-7733-4FC8-8FFD-AC69F9EDDAC9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2FA29A23-7733-4FC8-8FFD-AC69F9EDDAC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2FA29A23-7733-4FC8-8FFD-AC69F9EDDAC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2FA29A23-7733-4FC8-8FFD-AC69F9EDDAC9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {316C0E09-32DB-4C96-B30A-4A446BAD7B4B}
 	EndGlobalSection
 EndGlobal

@@ -1,0 +1,18 @@
+﻿@page "/counter"
+@inject Services.SearchData SearchData
+@inject NavigationManager NavigationManager
+
+<h1>Counter</h1>
+
+<p>Current count: @_currentCount</p>
+
+<EditForm Model="@_searchModel" OnValidSubmit="IncrementCount">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <InputText id="name" @bind-Value="_searchModel.Query" />
+
+    <button type="submit">Submit</button>
+</EditForm>
+
+<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>

@@ -1,0 +1,11 @@
+﻿@page "/"
+
+
+<EditForm Model="@_searchModel" OnValidSubmit="IncrementCount">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <InputText id="name" @bind-Value="_searchModel.Query" />
+
+    <button type="submit">Submit</button>
+</EditForm>
