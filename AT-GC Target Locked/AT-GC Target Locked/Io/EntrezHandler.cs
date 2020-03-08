@@ -40,7 +40,7 @@ namespace AT_GC_Target_Locked.Io
         private JObject GetPubList(string term)
         {
             var response = Client.GetAsync("esearch.fcgi?term=" +
-                                           HttpUtility.UrlEncode(term).ToLower()).Result;
+                                           HttpUtility.UrlEncode(term).ToLower() + "&sort=relevance").Result;
             var content = "";
             if (response.IsSuccessStatusCode)
             {

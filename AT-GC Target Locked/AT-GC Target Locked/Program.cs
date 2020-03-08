@@ -7,11 +7,20 @@ using Newtonsoft.Json.Linq;
 
 namespace AT_GC_Target_Locked
 {
+    // ReSharper disable once ClassNeverInstantiated.Global
     class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(EntrezHandler.GetInstance().Search("Diabetes Alzheimers"));
+            Console.Write("Enter Search Terms: ");
+            var entries = EntrezHandler.GetInstance().Search(Console.ReadLine());
+            foreach (var response in PubTatorHandler.GetInstance().GetArticleByPmId(entries))
+            {
+                
+            }
+
+            PubTatorHandler.GetInstance().GetArticleByPmId(entries);
+            Console.WriteLine();
         }
     }
 }
