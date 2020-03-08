@@ -4,8 +4,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using AT_GC_Target_Locked.Io;
-using AT_GC_Target_Locked.Models;
-using Newtonsoft.Json.Linq;
 
 namespace AT_GC_Target_Locked
 {
@@ -15,26 +13,26 @@ namespace AT_GC_Target_Locked
         static void Main(string[] args)
         {
             Console.Write("Enter Search Terms: ");
-            var entries = new string[0];
+            string[] entries;
             var term = Console.ReadLine();
             try
             {
                 entries = EntrezHandler.GetInstance().Search(term);
             }
-            catch (EntrezHandler.NoResultsException e)
+            catch (EntrezHandler.NoResultsException)
             {
                 Console.WriteLine("Could not find anything :(");
                 return;
             }
             Console.WriteLine("Found " + entries.Length + " relevant articles!");
-            var termArray = term.Split(" ").Where(
+            var termArray = term?.Split(" ").Where(
                 s => !string.IsNullOrWhiteSpace(s)).ToList();
             var i = 0;
             foreach (var response in PubTatorHandler.GetInstance().GetArticleByPmId(entries))
             {
                 Console.WriteLine("Database: PubMed");
                 Console.WriteLine("Article {0}: \tConfidence: {1}", i+1, 
-                    response.ComputeRelevance(termArray.ToArray()));
+                    response.ComputeRelevance(termArray?.ToArray()));
                 Console.WriteLine(response.Passages[0].Text);
                 Console.WriteLine("TAGS: ");
                 var duplicates = new List<string>();
