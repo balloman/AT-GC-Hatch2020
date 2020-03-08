@@ -81,7 +81,15 @@ namespace AT_GC_Target_Locked.Io
                 {
                     break;
                 }
-                pubArray.Add(PubTatorResponse.ParseString(s));
+
+                try
+                {
+                    pubArray.Add(PubTatorResponse.ParseString(s));
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e);
+                }
                 iter++;
             }
 

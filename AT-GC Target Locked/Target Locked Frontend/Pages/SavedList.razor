@@ -1,0 +1,29 @@
+﻿@page "/SavedList"
+@inject Services.SearchData SearchData
+@inject IModalService Modal
+
+<h3>SavedList</h3>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th><button class="btn btn-primary" @onclick="ButtonClicked">Remove</button></th>
+        <th>PMIDS</th>
+        <th>Title</th>
+        <th>Confidence</th>
+        <th>Tags</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var data in SearchData.SavedIds)
+    {
+        <tr>
+            <td><input @bind="@Checks[data.Key]" type="checkbox" /></td>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/@data.Key"><td>@data.Key</td></a>
+            <td>@data.Value.Title</td>
+            <td>@data.Value.Confidence</td>
+            <td><a href="javascript: void(0)" @onclick="@(() => SetTags(data.Value))">@data.Value.Tags[0].Text</a></td>
+        </tr>
+    }
+    </tbody>
+</table>

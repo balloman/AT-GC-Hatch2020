@@ -2,27 +2,23 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using AT_GC_Target_Locked.Io;
-using AT_GC_Target_Locked.Models;
-using AT_GC_Target_Locked.Models.PubTator;
 using Blazored.Modal;
-using Microsoft.AspNetCore.Components;
 using Target_Locked_Frontend.Services;
 
 namespace Target_Locked_Frontend.Pages
 {
-    public partial class SearchResults
+    public partial class SavedList
     {
-        public string[] Results { get; set; }
+        public string[] Results;
         public Dictionary<string, bool> Checks { get; set; }
 
         protected override void OnInitialized()
         {
             Results = SearchData.Results;
             Checks = new Dictionary<string, bool>();
-            foreach (var data in SearchData.PubTatorResults)
+            foreach (var data in SearchData.SavedIds)
             {
-                Checks.Add(data.Pmid, false);
+                Checks.Add(data.Key, false);
             }
         }
 
@@ -32,16 +28,7 @@ namespace Target_Locked_Frontend.Pages
             {
                 if (Checks[check])
                 {
-                    try
-                    {
-                        SearchData.SavedIds.Add(check, Array.Find(SearchData.PubTatorResults, data => 
-                            data.Pmid.Equals(check, StringComparison.CurrentCultureIgnoreCase)));
-                    }
-                    catch (Exception e)
-                    {
-                        //TODO: Show the user a modal or something for trying to add more than once
-                        Console.WriteLine(e);
-                    }
+                    SearchData.SavedIds.Remove(check);
                 }
                 Checks[check] = false;
             }

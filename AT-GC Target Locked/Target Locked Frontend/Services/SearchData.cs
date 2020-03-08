@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AT_GC_Target_Locked.Models;
+using AT_GC_Target_Locked.Models.PubTator;
 using Target_Locked_Frontend.Pages;
 
 namespace Target_Locked_Frontend.Services
@@ -13,11 +15,11 @@ namespace Target_Locked_Frontend.Services
 
         public DisplayData[] PubTatorResults { get; set; }
 
-        public List<string> SavedIds { get; set; }
+        public Dictionary<string, DisplayData> SavedIds { get; set; }
 
         public SearchData()
         {
-            SavedIds = new List<string>();
+            SavedIds = new Dictionary<string, DisplayData>();
         }
 
         public struct DisplayData
@@ -26,6 +28,7 @@ namespace Target_Locked_Frontend.Services
             public double Confidence { get; set; }
             public string Title { get; set; }
             public string Pmid { get; set; }
+            public List<Annotation> Tags { get; set; }
         }
     }
 }

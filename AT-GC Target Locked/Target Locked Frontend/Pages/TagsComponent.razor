@@ -1,0 +1,36 @@
+﻿@using AT_GC_Target_Locked.Models
+@using AT_GC_Target_Locked.Models.PubTator
+@inject IModalService ModalService
+@inject Services.SearchData SearchData
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>Identifier</th>
+        <th>Type</th>
+        <th>Tag</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var data in Tags)
+    {
+        <tr>
+            <td>@data.Infons["identifier"]</td>
+            <td>@data.Text</td>
+            <td>@data.Infons["type"]</td>
+        </tr>
+    }
+    </tbody>
+</table>
+
+@code {
+    List<Annotation> Tags;
+
+    [CascadingParameter] ModalParameters parameters { get; set; }
+
+    protected override void OnInitialized()
+    {
+        this.Tags = parameters.Get<List<Annotation>>("tags");
+    }
+
+}

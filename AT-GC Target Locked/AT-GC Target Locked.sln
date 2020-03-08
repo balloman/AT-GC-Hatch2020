@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AT-GC Target Locked", "AT-G
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AT-GC Target Locked Tests", "AT-GC Target Locked Tests\AT-GC Target Locked Tests.csproj", "{7DFD2706-BB21-4754-BFDE-1B0DDE4EA65C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Target Locked Frontend", "Target Locked Frontend\Target Locked Frontend.csproj", "{2FA29A23-7733-4FC8-8FFD-AC69F9EDDAC9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Target Locked Frontend", "Target Locked Frontend\Target Locked Frontend.csproj", "{2FA29A23-7733-4FC8-8FFD-AC69F9EDDAC9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

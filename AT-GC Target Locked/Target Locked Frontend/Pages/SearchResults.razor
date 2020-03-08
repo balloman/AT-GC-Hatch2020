@@ -1,26 +1,32 @@
 ﻿@page "/SearchResults"
 @inject Services.SearchData SearchData
+@inject IModalService Modal
 
 <h3>Results:</h3>
 
 <table class="table">
     <thead>
-    <tr>
-        <th><button class="btn btn-primary" @onclick="ButtonClicked">Add</button></th>
-        <th>PMIDS</th>
-        <th>Title</th>
-        <th>Confidence</th>
+        <tr>
+            <th><button class="btn btn-primary" @onclick="ButtonClicked">Add</button></th>
+            <th>PMIDS</th>
+            <th>Title</th>
+            <th>Confidence</th>
+            <th>Tags</th>
         </tr>
     </thead>
     <tbody>
-    @foreach (var data in SearchData.PubTatorResults)
-    {
-        <tr>
-            <td><input @bind="@Checks[data.Pmid]" type="checkbox" /></td>
-            <td>@data.Pmid</td>
-            <td>@data.Title</td>
-            <td>@data.Confidence</td>
-        </tr>
-    }
+        @foreach (var data in SearchData.PubTatorResults)
+        {
+            <tr>
+                <td><input @bind="@Checks[data.Pmid]" type="checkbox" /></td>
+                <a href="https://pubmed.ncbi.nlm.nih.gov/@data.Pmid" target="_blank"><td>@data.Pmid</td></a>
+                <td>@data.Title</td>
+                <td>@data.Confidence</td>
+                <td><a href="javascript: void(0)" @onclick="@(() => SetTags(data))">@data.Tags[0].Text</a></td>
+            </tr>
+        }
     </tbody>
 </table>
+
+
+
