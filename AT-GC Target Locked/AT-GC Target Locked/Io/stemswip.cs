@@ -8,7 +8,7 @@ namespace AT_GC_Target_Locked.Io
 {
     class stemswip
     {
-        static void Main(string[] args)
+        static void yeet(string[] args)
             {
                 HttpClient client = new HttpClient();
                 client.BaseAddress = new Uri("https://www.dictionaryapi.com/api/v3/references/medical/json/");
