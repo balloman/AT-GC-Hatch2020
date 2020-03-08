@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
+using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Security.Cryptography.X509Certificates;
 using Newtonsoft.Json.Linq;
@@ -9,6 +10,21 @@ namespace AT_GC_Target_Locked.Models.PubTator
 {
     public class PubTatorResponse
     {
+        private enum FormulaTerms
+        {
+            Title,
+            Tags,
+            Abstract
+        }
+        
+        private static readonly Dictionary<FormulaTerms, double> ConfidenceFormula = 
+            new Dictionary<FormulaTerms, double>()
+        {
+            {FormulaTerms.Title, 0.35},
+            {FormulaTerms.Tags, 0.35},
+            {FormulaTerms.Abstract, 0.3}
+        }; 
+        
         public string Id { get; set; }
         public Dictionary<string, string> Infons { get; set; }
         public List<Passage> Passages { get; set; }
@@ -88,5 +104,48 @@ namespace AT_GC_Target_Locked.Models.PubTator
             response.Year = jsonAnnotation.GetValue("year").ToObject<int>();
             return response;
         }
+
+        public double ComputeRelevance(string[] terms)
+        {
+            var termConfidence = new double[terms.Length];
+            var i = 0;
+            foreach (var term in terms)
+            {
+                var confidence = 0.0;
+                if (Passages[0].Text.Contains(term, StringComparison.CurrentCultureIgnoreCase))
+                {
+                    confidence += ConfidenceFormula[FormulaTerms.Title] * 1;
+                }
+
+                if (Tags.Any(accessor => accessor.data.Contains(term, StringComparison.CurrentCultureIgnoreCase)))
+                {
+                    confidence += ConfidenceFormula[FormulaTerms.Tags] * 1;
+                }else if (Passages.Find(passage => passage.Annotations.Count > 0).Annotations.Any(annotation => 
+                    annotation.Infons["identifier"].Contains(term, StringComparison.CurrentCultureIgnoreCase)))
+                {
+                    confidence += ConfidenceFormula[FormulaTerms.Tags] * 1;
+                }else if (Passages.Find(passage => passage.Annotations.Count > 0).Annotations.Any(annotation => 
+                          annotation.Infons["type"].Contains(term, StringComparison.CurrentCultureIgnoreCase)))
+                {
+                    confidence += ConfidenceFormula[FormulaTerms.Tags] * 1;
+                }else if (Passages.Find(passage => passage.Annotations.Count > 0).Annotations.Any(annotation => 
+                          annotation.Text.Contains(term, StringComparison.CurrentCultureIgnoreCase)))
+                {
+                    confidence += ConfidenceFormula[FormulaTerms.Tags] * 1;
+                }
+
+                if (Passages.Find(passage => passage.Infons["type"].Equals("abstract")).Text.Contains(
+                    term, StringComparison.CurrentCultureIgnoreCase))
+                {
+                    confidence += ConfidenceFormula[FormulaTerms.Abstract] * 1;
+                }
+
+                termConfidence[i] = confidence;
+                i++;
+            }
+
+            return termConfidence.Average();
+        }
     }
+    
 }

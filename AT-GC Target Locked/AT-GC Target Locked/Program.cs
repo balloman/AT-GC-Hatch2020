@@ -16,9 +16,10 @@ namespace AT_GC_Target_Locked
         {
             Console.Write("Enter Search Terms: ");
             var entries = new string[0];
+            var term = Console.ReadLine();
             try
             {
-                entries = EntrezHandler.GetInstance().Search(Console.ReadLine());
+                entries = EntrezHandler.GetInstance().Search(term);
             }
             catch (EntrezHandler.NoResultsException e)
             {
@@ -26,11 +27,14 @@ namespace AT_GC_Target_Locked
                 return;
             }
             Console.WriteLine("Found " + entries.Length + " relevant articles!");
+            var termArray = term.Split(" ").Where(
+                s => !string.IsNullOrWhiteSpace(s)).ToList();
             var i = 0;
             foreach (var response in PubTatorHandler.GetInstance().GetArticleByPmId(entries))
             {
                 Console.WriteLine("Database: PubMed");
-                Console.WriteLine("Article {0}: ", i+1);
+                Console.WriteLine("Article {0}: \tConfidence: {1}", i+1, 
+                    response.ComputeRelevance(termArray.ToArray()));
                 Console.WriteLine(response.Passages[0].Text);
                 Console.WriteLine("TAGS: ");
                 var duplicates = new List<string>();
