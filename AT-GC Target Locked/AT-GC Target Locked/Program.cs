@@ -3,6 +3,7 @@
 using System;
 using AT_GC_Target_Locked.Io;
 using AT_GC_Target_Locked.Models;
+using Newtonsoft.Json.Linq;
 
 namespace AT_GC_Target_Locked
 {
@@ -10,6 +11,7 @@ namespace AT_GC_Target_Locked
     {
         static void Main(string[] args)
         {
+            Console.WriteLine(EntrezHandler.GetInstance().Search("Diabetes Alzheimers"));
         }
     }
 }
