@@ -6,15 +6,17 @@
 <table class="table">
     <thead>
     <tr>
+        <th><button class="btn btn-primary" @onclick="ButtonClicked">Add</button></th>
         <th>PMIDS</th>
         <th>Title</th>
         <th>Confidence</th>
-    </tr>
+        </tr>
     </thead>
     <tbody>
-    @foreach (var data in GetResponses(Results))
+    @foreach (var data in SearchData.PubTatorResults)
     {
         <tr>
+            <td><input @bind="@Checks[data.Pmid]" type="checkbox" /></td>
             <td>@data.Pmid</td>
             <td>@data.Title</td>
             <td>@data.Confidence</td>
